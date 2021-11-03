@@ -8,7 +8,7 @@
 }
 .mainimg{
     width: 99vw;
-    height: 99vh;
+    height: 77vh;
     background-color: orange;
     background-repeat: no-repeat;  
     margin-bottom: 0; 
@@ -27,22 +27,35 @@
     margin-top: 0;
 }
 .item:nth-child(1){
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif  sans-serif;
-    text-align: center;
     background-color: rgb(0, 23, 48);
+}
+.number1 {
+    font-size: 9rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: whitesmoke;
+    text-align: center;
+    margin-top: 50px;
 }
 .item:nth-child(2){
     grid-column: span 2;
     background-color: rgb(74, 215, 209)
 }
+.item1text{
+    color: whitesmoke;
+    margin: 35px 16px 16px 20px;    
+}
 button{
     background-color: rgb(254, 74, 73);
     color: whitesmoke;
+    margin-left: 16px;
+    padding: 8px 28px;
 }
 .item:nth-child(3){
     background-color: rgb(3, 127, 239)
-
+}
+.item1img{
+    width: 100%;
+    height: 350px;
 }
 .container1{
     display: grid;
@@ -56,12 +69,32 @@ button{
 .flex1 {
     display: flex;
     position: absolute;
-    flex-wrap:wrap;
-    padding: 25px 10rem;
+    padding: 16px 24px 16px 100px;
     margin-top: 50px;
     background-color: rgb(74, 215, 209)
 }
-.item2{
+.item1text1{
+    color: whitesmoke;
+    display: flex;
+    padding: 26px 24px 16px 100px;
+}
+.item1text2{
+    color: whitesmoke;
+    display: flex;
+    padding: 80px 24px 16px 100px;
+}
+.item1text3{
+    color: whitesmoke;
+    display: flex;
+    padding: 26px 24px 16px 100px;
+    position: absolute;
+    flex-wrap: wrap;
+}
+.item1text4{
+    color: whitesmoke;
+    display: flex;
+    padding: 140px 24px 16px 100px;
+    position: absolute;
 }
 .item2img {
     width: 50%;
@@ -72,12 +105,9 @@ button{
 .flex2{
     display: flex;
     position: absolute;
-    flex-wrap:wrap;
-    padding: 25px 10rem;
+    padding: 16px 24px 16px 100px;
     margin-top: 50px;
     background-color: whitesmoke;
-}
-.item3{
 }
 .item3img {
     width: 50%;
@@ -88,8 +118,7 @@ button{
 .flex3{
     display: flex;
     position: absolute;
-    flex-wrap:wrap;
-    padding: 25px 10rem;
+    padding: 16px 24px 16px 100px;
     margin-top: 50px;
     background-color: whitesmoke;
 }
@@ -100,28 +129,16 @@ button{
     display: flex;
     position: absolute;
     flex-wrap:wrap;
-    padding: 25px 10rem;
+    padding: 16px 24px 16px 100px;
     margin-top: 50px;
     background-color: rgb(254, 74, 73);
 }
-.container2{
-    display: grid;
-    grid-template-rows: repeat(2,300px);
-    grid-template-columns: repeat(3,1fr);
-    border: 1px solid black;
+.second{
+    position: relative;
 }
-.item5{
-    grid-column: span 3;
-    border: 1px solid black;
-}
-.item6{
-    border: 1px solid black;
-    grid
-}
-.double{
-    display: grid;
-    grid-column: 2;
-    background-color: coral;
-    width: 50vw;
-    height: 50vh;
+.secondimg{
+    width: 99vw;
+    height: 42vh;
+    background-color: orange;
+    margin-bottom: 0; 
 }
