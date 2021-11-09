@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/lab1104.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="maincontainer">
+            <div class="left">
+                <h2>Write us</h2>
+                <input type="text" id="name" placeholder="Write your name">
+                <input type="text" id="phone"placeholder="Write your phone number">
+                <br>
+                <button type="button" onclick="addContact();">Add Contact</button>
+                <button type="button" onclick="loadContact();">Show Contact</button>
+
+                <table id="tablecontact">
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone number</th>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="right">
+                <h2>Search for the contact</h2>
+                <input type="text" id="searchname" placeholder="Write your name">
+                <button type="button" onclick="searchInputName();">Search</button>
+                <input type="text" id="resultsearch">
+
+                <input type="text" id="searchphone" placeholder="Write your phone">
+                <button type="button" onclick="searchInputPhone();">Search</button>
+                <input type="text" id="resultsearchphone">
+            </div>
+        </div>
+
+        <script>
+            var contacts=[]; 
+
+            var tableobj=document.getElementById("tablecontact");
+            function loadContact(){
+                tableobj.innerHTML="<tr><th>Name</th><th>Phone number</th></tr>";
+                for(var key in contacts){
+                    tableobj.innerHTML+="<tr><td>"+key+"</td><td>"+contacts[key]+"</td></tr>";
+                }
+            }
+            
+            function addContact(){
+                var contactName = document.getElementById("name").value;
+                var contactPhone = document.getElementById("phone").value;
+                if(contactName=="" || contactPhone==""){
+                    alert("Please add both contact")
+                }else{
+                    var tableobject=document.getElementById("tablecontact");
+                    contacts[contactName]=contactPhone;
+                    console.log(contacts);
+                    document.getElementById("name").value="";
+                    document.getElementById("phone").value="";
+                }
+            }
+
+            function searchInputName(){
+                var name = document.getElementById("searchname").value;
+                if(name == ""){
+                    alert("Please enter a contact info");
+                }else{
+                    for(var phone in contacts){
+                        if(phone==name){
+                            document.getElementById("resultsearch").value=contacts[phone];
+                        }
+                    }
+                }
+            }
+
+            function searchInputPhone(){
+                var phone = document.getElementById("searchphone").value;
+                if(phone == ""){
+                    alert("Please enter a contact info");
+                }else{
+                    for(var name in contacts){
+                        if(phone==contacts[name]){
+                            document.getElementById("resultsearchphone").value=name;
+                        }
+                    }
+                }
+            } 
+
+        </script>
+    </body>
+</html>
