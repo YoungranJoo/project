@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div.tab{
+                display: flex;
+                border: 1px solid #ccc;
+                background-color: #f1f1f1;
+            }
+            div.tab button{
+                background-color: inherit;
+                border: none;
+                outline: none;
+                padding: 14px 16px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            div.tab button:hover{
+                background-color: #ddd;
+            }
+            div.tab button.active{
+                background-color: #ccc;
+            }
+            div.tabcontent{
+                display: none;
+                padding: 6px 12px;
+                border: 1px solid #ccc;
+                border-top: none;
+                background-color: #f1f1f1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="tab">
+            <button class="tablinks" onclick="openCity('Canada',this);">Canada</button>
+            <button class="tablinks" onclick="openCity('England',this);">England</button>
+            <button class="tablinks" onclick="openCity('USA',this);">USA</button>
+        </div>
+        <div id="Canada" class="tabcontent">
+            <h3>Canada</h3>
+            <p>
+                Canada is a country in North America. Its ten provinces and three territories extend from the Atlantic to the Pacific and northward into the Arctic Ocean, covering 9.98 million square kilometres, making it the world's second-largest country by total area.
+            </p>
+        </div>
+        <div id="England" class="tabcontent">
+            <h3>England</h3>
+            <p>
+                The United Kingdom, made up of England, Scotland, Wales and Northern Ireland, is an island nation in northwestern Europe. England – birthplace of Shakespeare and The Beatles – is home to the capital, London, a globally influential centre of finance and culture. England is also site of Neolithic Stonehenge, 
+            </p>
+        </div>
+        <div id="USA" class="tabcontent">
+            <h3>USA</h3>
+            <p>
+                The U.S. is a country of 50 states covering a vast swath of North America, with Alaska in the northwest and Hawaii extending the nation’s presence into the Pacific Ocean. Major Atlantic Coast cities are New York, a global finance and culture center, and capital Washington, DC. Midwestern metropolis Chicago is known for influential architecture and on the west coast, Los Angeles' Hollywood is famed for filmmaking.
+            </p>
+        </div>
+        <button onclick="prevSlide();">previous</button>
+        <button onclick="nextSlide();">next</button>
+        <div class="imgs">
+            <img src="/img/canada.jpg" id="imgSlide" class="slider">
+        </div>
+
+        <script>
+            var imgSrc = ["/img/canada.jpg","/img/UK.jpg","/img/UnitedStates.jpg"];
+            let num = -1;
+            function prevSlide() {
+                if (num == 0) {
+                    num = 2;
+                }else {
+                    num--;
+                }
+                document.getElementById("imgSlide").src = imgSrc[num];
+            }
+            function nextSlide() {
+                if (num == 2) {
+                    num = 0;
+                }else {
+                    num++;
+                }
+                document.getElementById("imgSlide").src = imgSrc[num];
+            } 
+
+            var tabcontents = document.getElementsByClassName("tabcontent");
+            var tablinks = document.getElementsByClassName("tablinks");
+            openCity('Canada',tablinks[0]);
+            function openCity(CityName, buttonObj) {
+                for(var i=0;i<tabcontents.length;i++){
+                    tabcontents[i].style.display = "none";
+                }
+                for(var i=0;i<tablinks.length;i++){
+                    tablinks[i].classList.remove("active");
+                }
+                document.getElementById(CityName).style.display = "block";
+                buttonObj.classList.add("active");
+            } 
+
+        </script>
+    </body>
+</html>
